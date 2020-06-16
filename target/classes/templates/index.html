@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+ 
+<html>
+<head>
+    <title>Server 441</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" >
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="js/postrequest.js"></script>
+    <script src="js/getrequest.js"></script>
+    <script src="js/deleterequest.js"></script>
+    <script src="js/putrequest.js"></script>
+    
+</head>
+<body>
+
+<div class="jumbotron text-center">
+	<h1>
+		Server 441
+	</h1>
+</div>
+ 
+<div class="container-fluid pt-3" style="margin-left:20px">  
+  
+  <div class="row">
+  	<button type="button" class="btn btn-primary col-sm-3" style="margin-bottom:20px" data-toggle="collapse" data-target="#addUser">Add New User</button>
+    <div class="form-group col-sm-12">
+    <form class="form-inline collapse" id="addUser">
+   	 <div class="form-group col-sm-4">
+        <label for="name" style="margin-right:5px">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="enter name"/>
+        </div>
+      <div class="form-group col-sm-4">
+        <label for="number" style="margin-right:5px">Number:</label>
+        <input type="number" class="form-control" id="number" placeholder="enter phone number"/>
+      </div>
+      <button type="submit" class="btn btn-outline-primary col-sm-2"
+      data-toggle="modal" data-target="#myModal">Submit</button>
+    </form>
+  </div>
+  </div>
+  
+  
+  
+  
+  <div class="row">
+  <button type="button" class="btn btn-primary col-sm-3" style="margin-bottom:20px" data-toggle="collapse" data-target="#getNumber">Get Number from Name</button>
+  <div class="col-sm-12 form-group">
+  <div class="collapse form-inline" id="getNumber">
+ 	 <div class="col-sm-4" >
+  	 	<input type="number" class="form-control" id="getNum" name="getNum" placeholder="enter phone number"/>
+   		</div>
+   		<button  type="submit" data-toggle="modal" data-target="#myModal" id="getName" 
+  	 		 class="btn btn-outline-primary col-sm-2">Get Name</button>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <div class="row">
+   <button type="button" class="btn btn-primary col-sm-3" data-toggle="collapse" style="margin-bottom:20px" data-target="#delete">Delete User by Phone Number</button>
+    <div class="form-group col-sm-12">
+    <form class="form-inline collapse" id="delete">
+      <div class="form-group col-sm-4">
+        <label for="number" style="margin-right:5px">Number:</label>
+        <input type="number" class="form-control" id="delNum" placeholder="enter phone number"/>
+      </div>
+      <button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-outline-primary col-sm-2">Submit</button>
+    </form>
+  </div>
+  </div>
+  
+  
+  
+  <div class="row">
+     <button type="button" class="btn btn-primary col-sm-3" data-toggle="collapse" style="margin-bottom:20px" data-target="#update">Update Name from Phone Number</button>
+      <div class="form-group col-sm-12">
+    <form class="form-inline collapse" id="update">
+      <div class="form-group col-sm-4">
+        <label for="name" style="margin-right:5px">Name:</label>
+        <input type="text" class="form-control" id="upName" placeholder="enter new name"/>
+      </div>
+      <div class="form-group col-sm-4">
+        <label for="number" style="margin-right:5px">Number:</label>
+        <input type="number" class="form-control" id="upNum" placeholder="enter phone number to update"/>
+      </div>
+      <button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-outline-primary col-sm-2">Submit</button>
+    </form>
+  </div>
+  </div>
+  
+  
+  
+   <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Result</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body"><p id="resultModal"></p>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+</body>
+</html>
